@@ -1,3 +1,9 @@
-<div class="text-wrapper">
-  <p></p>
+<div class="main-page"
+     (mouseenter)="onEvent($event)"
+     (mouseleave)="onEvent($event)"
+     (mousemove)="coordinates($event)">
+  <!-- <p>x: {{clientX}}, y: {{clientY}}</p> -->
+  <p #text1 class="text text1" (mouseenter)='changeText = false'>{{text}}</p>
+  <p #text2 class="text text2" (mouseenter)='changeText = false'>{{text}}</p>
+  <p #text3 class="text text3" (mouseenter)='changeText = false'>{{text}}</p>
 </div>

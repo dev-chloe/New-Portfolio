@@ -1,0 +1,28 @@
+@import '../../styles.scss';
+
+@media #{$pc} {
+  .main-page {
+    width: 100vw;
+    height: 100vh;
+    .text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: rem(50);
+      font-weight: bold;
+      transform-origin: center;
+      transition: all 0.2s;
+      mix-blend-mode: screen;
+      &.text1 {
+        color: #2A3756;
+      }
+      &.text2 {
+        color: #9FC3E6;
+      }
+      &.text3 {
+        color: #DFE2E5;
+      }
+    }
+  }
+}
