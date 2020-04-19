@@ -2,10 +2,20 @@
 
 @media #{$pc} {
   .about-wapper {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: $textMain;
+    width: 100%;
+    height: 100%;
+    padding: rem(150);
+    color: $textMain;
+    font-size: rem(25);
+    .content-wrapper {
+      // position: absolute;
+      // top: 50%;
+      // left: 50%;
+      // transform: translate(-50%, -50%);
+      // min-width: rem(300);
+      span {
+        line-height: 1.2;
+      }
+    }
   }
 }

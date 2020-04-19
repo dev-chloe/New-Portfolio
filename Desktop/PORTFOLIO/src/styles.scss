@@ -55,6 +55,26 @@ $wideTablet: "only screen  and (min-width : 1024px) and (max-width : 1200px)";
       list-style: none;
   }
 
+  .violet {
+    color: violet;
+  }
+
+  .blue {
+    color: steelblue;
+  }
+
+  .skybule {
+    color: lightskyblue;
+  }
+
+  .green {
+    color: lightseagreen;
+  }
+
+  .yellow {
+    color: navajowhite;
+  }
+
   @media #{pc} {
     .shown-in-pc {
       display: block;
