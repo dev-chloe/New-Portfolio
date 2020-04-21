@@ -21,7 +21,7 @@ export class AboutComponent implements OnInit {
     this.workSequential().then(()=> {
       setTimeout(() => {
         this.test()
-      },18000)
+      },17000)
     });
   }
 
