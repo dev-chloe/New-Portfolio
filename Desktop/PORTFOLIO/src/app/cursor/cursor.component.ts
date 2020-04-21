@@ -22,12 +22,12 @@ export class CursorComponent implements OnInit {
      setTimeout(() => {
       this.expand=false;
      }, 500)
- }
+  }
 
  @HostListener('document:mousemove', ['$event'])
  onMousemove($event) {
    this.top=($event.pageY - 10)+ "px";
    this.left= ($event.pageX - 10)+ "px";
-}
+  }
 
 }

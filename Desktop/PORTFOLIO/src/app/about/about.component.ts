@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef} from '@angular/core';
 
 import TypeIt from "typeit";
+import { promise } from 'protractor';
 
 @Component({
   selector: 'app-about',
@@ -9,13 +10,28 @@ import TypeIt from "typeit";
 })
 export class AboutComponent implements OnInit {
 
+  @ViewChild('contactBox') contactBox:ElementRef;
+
   constructor() { }
 
   ngOnInit(): void {
-    this.typingCallback();
   }
 
+  ngAfterViewInit() {
+    this.workSequential().then(()=> {
+      setTimeout(() => {
+        this.test()
+      },18000)
+    });
+  }
 
+  workSequential() : Promise<any> {
+      return Promise.resolve((() => {
+        this.typingCallback();
+          return;
+      })());
+  }
+  
   typingCallback() {
     new TypeIt("#text", {
       speed: 20
@@ -28,21 +44,21 @@ export class AboutComponent implements OnInit {
       .pause(100)
       .type(" &nbsp <span class='yellow'>ngOnInit</span>(){")
       .break()
-      .type(" &nbsp &nbsp  this.chloe.name = 'Sunghyun Kim';")
+      .type(" &nbsp &nbsp  <span class='blue'>this</span><span class='skybule'>.chloe</span>.<span class='skybule'>name</span> = <span class='brown'>'Sunghyun Kim'</span>;")
       .break()
-      .type(" &nbsp &nbsp  this.chloe.birth = '1990.11.23';")
+      .type(" &nbsp &nbsp  <span class='blue'>this</span><span class='skybule'>.chloe</span>.<span class='skybule'>birth</span> = <span class='brown'>'1990.11.23'</span>;")
       .break()
       .type(" &nbsp  }")
       .break().break()
       .pause(1000)
 
-      .type(" &nbsp  education(){")
+      .type(" &nbsp  <span class='yellow'>education</span>(){")
       .break()
-      .type(" &nbsp &nbsp  return [")
+      .type(" &nbsp &nbsp  <span class='violet'>return</span> [")
       .break()
-      .type("&nbsp &nbsp &nbsp  {2009 ~ 2014 : Dong-eui University - Department of English Language and Literature},")
+      .type("&nbsp &nbsp &nbsp  {<span class='skybule'>2009 ~ 2014 : Dong-eui University - Department of English Language and Literature</span>},")
       .break()
-      .type("&nbsp &nbsp &nbsp  {2017 ~ 2018 : Vocational Training Institute - Smart e-book Development C}")
+      .type("&nbsp &nbsp &nbsp  {<span class='skybule'>2017 ~ 2018 : Vocational Training Institute - Smart e-book Development C</span>}")
       .break()
       .type("&nbsp &nbsp ]")
       .break()
@@ -50,61 +66,32 @@ export class AboutComponent implements OnInit {
       .pause(1000)
 
       .break().break()
-      .type(" &nbsp  workExperience(){")
+      .type(" &nbsp  <span class='yellow'>workExperience</span>(){")
       .break()
-      .type(" &nbsp &nbsp  return [")
+      .type(" &nbsp &nbsp  <span class='violet'>return</span> [")
       .break()
-      .type("&nbsp &nbsp &nbsp  {2019 ~ 2020 : biginsight - publishing and Front-end develop},")
+      .type("&nbsp &nbsp &nbsp  {<span class='skybule'>2019 ~ 2020 : biginsight - publishing and Front-end develop</span>},")
       .break()
-      .type("&nbsp &nbsp &nbsp  {2019.01 ~ 2019.03 : Summer Co. - publishing},")
+      .type("&nbsp &nbsp &nbsp  {<span class='skybule'>2019.01 ~ 2019.03 : Summer Co. - publishing</span>},")
       .break()
-      .type("&nbsp &nbsp &nbsp  {2018.9 ~ 2019.11 : enad - publishing},")
+      .type("&nbsp &nbsp &nbsp  {<span class='skybule'>2018.9 ~ 2019.11 : enad - publishing</span>},")
       .break()
-      .type("&nbsp &nbsp &nbsp  {2014 ~ 2017 : MTC International - admin assistant}")
+      .type("&nbsp &nbsp &nbsp  {<span class='skybule'>2014 ~ 2017 : MTC International - admin assistan</span>t}")
       .break()
       .type("&nbsp &nbsp ]")
       .break()
       .type("&nbsp }")
-      
-
-
       .break()
       .type("}")
-      // .type("<b>Name</b>")
-      // .break()
-      // .type("Sunghyun Kim")
-      // .break()
-      // .break()
-      // .pause(1000)
-      // .type("<b>Birth</b>")
-      // .break()
-      // .type("1990.11.23")
-      // .break()
-      // .break()
-      // .pause(1000)
-      // .type("<b>Education</b>")
-      // .break()
-      // .pause(1000)
-      // .type("2009 ~ 2014 : Dong-eui University - Department of English Language and Literature")
-      // .break()
-      // .pause(1000)
-      // .type("2017 ~ 2018 : Vocational Training Institute - Smart e-book Development C")
-      // .break()
-      // .break()
-      // .pause(1000)
-      // .type("<b>Work Experience</b>")
-      // .break()
-      // .type("2019 ~ 2020 : biginsight - publishing and Front-end develop")
-      // .break()
-      // .pause(1000)
-      // .type("2019.01 ~ 2019.03 : Summer Co. - publishing")
-      // .break()
-      // .pause(1000)
-      // .type("2018.9 ~ 2019.11 : enad - publishing")
-      // .break()
-      // .pause(1000)
-      // .type("2014 ~ 2017 : MTC International - admin assistant")
       .go();
   }
   
+  test(): Promise<any> {
+    return Promise.resolve((() => {
+      
+        this.contactBox.nativeElement.classList.add('floater')
+        return ;
+    })());
+  }
+    
 }
