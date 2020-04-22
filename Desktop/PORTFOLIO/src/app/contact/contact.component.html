@@ -1,17 +1,19 @@
 <div class="contact-wapper">
-    <form
-    action="https://formspree.io/xqkdvryw"
-    method="POST"
-  >
-    <label>
-      Your email:
-      <input type="text" name="_replyto">
-    </label>
-    <label>
-      Your message:
-      <textarea name="message"></textarea>
-    </label>
-  
-    <button type="submit">Send</button>
-  </form>
+  <div class="form-wapper">
+    <h3>Send e-mail!</h3>
+    <form action="https://formspree.io/xqkdvryw"
+          method="POST">
+      <label>
+        E-mail
+        <input (keyup)="emailcheck($event)" type="text" name="_replyto" placeholder="Enter your e-mail address">
+      </label>
+      <label>
+        Message
+        <textarea (keyup)="messagecheck($event)" name="message" placeholder="Enter your message"></textarea>
+      </label>
+    
+      <button [ngClass]="{'active' : emailflag && messageflag}" class="send-btn" type="submit">Send</button>
+    </form>
+  </div>
+    
 </div>
