@@ -1,26 +1,34 @@
 export var single = [
     {
-      "name": "Germany",
-      "value": 8940000
+      "name": "HTML/CSS/JS",
+      "value": 95
     },
     {
-      "name": "USA",
-      "value": 5000000
+      "name": "Angular",
+      "value": 79
     },
     {
-      "name": "France",
-      "value": 7200000
+      "name": "SCSS",
+      "value": 90
     },
     {
-      "name": "UK",
-      "value": 6200000
+      "name": "Typescript",
+      "value": 71
     },
     {
-      "name": "Italy",
-      "value": 4200000
+      "name": "jQuery",
+      "value": 89
     },
     {
-      "name": "Spain",
-      "value": 8200000
+      "name": "Git/bitbucket",
+      "value": 74
+    },
+    {
+      "name": "Slack,Jira",
+      "value": 90
+    },
+    {
+      "name": "Ps/Ai",
+      "value": 95
     }
   ];

@@ -9,11 +9,12 @@
     z-index: 9999;
     pointer-events: none;
     .circle-indicator {
-      width: rem(20);
-      height: rem(20);
+      width: rem(22);
+      height: rem(22);
       border: 1px solid white;
       border-radius: 50%;
       position: absolute;
+      // top: 50%;
       &::after {
         content: "";
         width: rem(20);

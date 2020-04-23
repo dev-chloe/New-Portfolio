@@ -1,15 +1,16 @@
 <div class="do-wapper">
   <div class="do-contents">
     <h3>What I can do</h3>
-    <div>
-      <div>
+    <div class="chart-wapper">
         <ngx-charts-pie-grid
+          (window:resize)="onResize($event)"
           [view]="view"
           [scheme]="colorScheme"
           [results]="single"
+          [minWidth]="170"
+          [designatedTotal] ="100"
           (select)="onSelect($event)">
         </ngx-charts-pie-grid>
-      </div>
     </div>
   </div>
 </div>

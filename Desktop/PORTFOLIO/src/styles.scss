@@ -55,6 +55,22 @@ $wideTablet: "only screen  and (min-width : 1024px) and (max-width : 1200px)";
       list-style: none;
   }
 
+  .ngx-charts {
+    float: none !important;
+    max-width: rem(1200) !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    
+    .label {
+      font-size: rem(20) !important;
+      fill: $textMain;
+      &:last-of-type {
+        display: none !important;
+      }
+    }
+  }
+
   .violet {
     color: violet;
   }
