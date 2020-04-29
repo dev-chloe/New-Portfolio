@@ -1,13 +1,43 @@
-<div class="logo">
+<div class="logo shown-in-pc">
   <a routerlink="/main" (click)="go('/main')">
     <!-- <img src="../../assets/logo.png" alt="logo"> -->
     Chloe.K
   </a>
 </div>
-<nav>
+<nav class="pc-nav shown-in-pc">
   <ul>
     <li><a routerlink="/about" (click)="go('/about')">About</a></li>
     <li><a routerlink="/what-i-do" (click)="go('/what-i-do')">What I Do</a></li>
     <li><a routerlink="/contact" (click)="go('/contact')">Contact</a></li>
   </ul>
 </nav>
+
+<div class="header-wrapper shown-in-mobile">
+  <div class="header-wrap">
+      <div class="logo-wapper">
+          <div class="logo">
+            <a routerlink="/main" (click)="go('/main')"
+               [ngClass]="{'open' :openSideMenu}">
+              Chloe.K
+            </a>
+          </div>
+      </div>
+      <div class="nav-wapper">
+          <nav class="sideNav"
+               [ngClass]="{'open' :openSideMenu}">
+              <ul #menuList>
+                <li><a routerlink="/about" (click)="go('/about')">About</a></li>
+                <li><a routerlink="/what-i-do" (click)="go('/what-i-do')">What I Do</a></li>
+                <li><a routerlink="/contact" (click)="go('/contact')">Contact</a></li>
+              </ul>
+          </nav>
+          <div class="hamburger-button" 
+              [ngClass]="{'active' : openSideMenu}"
+               (click)="sideMenu()">
+              <div class="hamburger-box">
+                  <div class="hamburger-inner"></div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

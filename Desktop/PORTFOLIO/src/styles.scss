@@ -104,7 +104,7 @@ $wideTablet: "only screen  and (min-width : 1024px) and (max-width : 1200px)";
     }
   }
 
-  @media #{$tablet} {
+  @media #{$tablet, $wideTablet} {
     .shown-in-pc {
       display: none;
     }

@@ -3,7 +3,7 @@ import { Component, OnInit, HostListener, ViewChild, ElementRef} from '@angular/
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss']
+  styleUrls: ['./main.component.scss', './main.component.tablet.scss', './main.component.mobile.scss']
 })
 export class MainComponent implements OnInit {
   @ViewChild('text1') text1:ElementRef;

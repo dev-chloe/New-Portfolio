@@ -45,3 +45,8 @@
     opacity: 0;
   }
 }
+@media #{$tablet, $wideTablet, $mobile} { 
+  .cursor {
+    display: none;
+  }
+}

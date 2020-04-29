@@ -4,7 +4,7 @@ import { single } from '../../data/data';
 @Component({
   selector: 'app-what-i-do',
   templateUrl: './what-i-do.component.html',
-  styleUrls: ['./what-i-do.component.scss']
+  styleUrls: ['./what-i-do.component.scss', './what-i-do.component.tablet.scss', './what-i-do.component.mobile.scss']
 })
 export class WhatIDoComponent implements OnInit {
 
@@ -24,11 +24,13 @@ export class WhatIDoComponent implements OnInit {
   constructor() {
     Object.assign(this, { single });
     if(window.innerWidth >= 1200) {
-      this.view = [innerWidth / 1.5, innerHeight / 1.8];
-    } else if(window.innerWidth >= 700) {
-      this.view = [innerWidth / 1.3, innerHeight / 1.8];
-    } else if(window.innerWidth < 700) {
-      this.view = [innerWidth / 1.35, innerHeight];
+      this.view = [1200, 550];
+    } else if(window.innerWidth >= 450) {
+      this.view = [innerWidth / 1.1, innerHeight / 1.8];
+    } else if(window.innerWidth >= 400) {
+      this.view = [innerWidth / 1.1, innerHeight * 2.5];
+    } else if(window.innerWidth < 400) {
+      this.view = [innerWidth , innerHeight * 2.5];
     }
    }
 
@@ -40,16 +42,17 @@ export class WhatIDoComponent implements OnInit {
   }
 
   onResize(event) {
-    if(window.innerWidth >= 1300) {
+  if(window.innerWidth >= 1200) {
+      this.view = [1200, 550];
     } 
-    else if(window.innerWidth >= 1200) {
-      this.view = [event.target.innerWidth / 1.35, event.target.innerHeight / 2];
+    else if(window.innerWidth >= 450) {
+      this.view = [event.target.innerWidth / 1.1, event.target.innerHeight / 2];
     } 
-    else if(window.innerWidth >= 700) {
-      this.view = [event.target.innerWidth / 1.35, event.target.innerHeight / 2];
-    } 
-    else if(window.innerWidth < 700) {
-      this.view = [event.target.innerWidth / 1.35, event.target.innerHeight];
+    else if(window.innerWidth >= 400) {
+      this.view = [event.target.innerWidth  / 1.1, event.target.innerHeight * 2.5];
+    }
+    else if(window.innerWidth < 400) {
+      this.view = [event.target.innerWidth, event.target.innerHeight * 2.5];
     }
   }
 
