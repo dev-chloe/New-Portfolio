@@ -1,4 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { AppService } from './../app.service';
 
 @Component({
   selector: 'app-cursor',
@@ -10,10 +11,13 @@ export class CursorComponent implements OnInit {
   top:any;
   left:any;
   expand=false;
-
-  constructor() { }
+  status;
+  device;
+  
+  constructor(public appService: AppService,) { }
 
   ngOnInit(): void {
+    this.check();
   }
 
   @HostListener('document:click', ['$event'])
@@ -30,4 +34,12 @@ export class CursorComponent implements OnInit {
    this.left= ($event.pageX - 10)+ "px";
   }
 
+  check() {
+    this.device = this.appService.startCustomerAcquisitionProcess();
+    if(this.device == true) {
+      this.status = true;
+    }else{
+      this.status = false;
+    }
+  }
 }

@@ -1,13 +1,15 @@
 @import '../../styles.scss';
 
-@media #{$pc} { 
   .cursor {
-    display: block;
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 9999;
     pointer-events: none;
+    &.show {
+      display: block;
+    }
     .circle-indicator {
       width: rem(22);
       height: rem(22);
@@ -32,7 +34,7 @@
       }
     }
   }
-}
+
 @keyframes cursorAnim {
   0% {
     transform: scale(1);
@@ -43,10 +45,5 @@
   100% {
     transform: scale(1);
     opacity: 0;
-  }
-}
-@media #{$tablet, $wideTablet, $mobile} { 
-  .cursor {
-    display: none;
   }
 }
