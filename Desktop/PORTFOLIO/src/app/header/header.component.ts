@@ -12,9 +12,14 @@ export class HeaderComponent implements OnInit {
 
   openSideMenu = false;
 
+  scrollY;
+  scrollEvent;
+
   constructor(private router:Router) { }
 
   ngOnInit(): void {
+    this.scrollY=0;
+    this.setEvent();
   }
 
   go(url) {
@@ -40,4 +45,17 @@ export class HeaderComponent implements OnInit {
     document.getElementsByTagName('body')[0].style.overflow = '';
   }
 
+  setEvent() {
+    this.scrollEvent = this.scroll.bind(this);
+    window.addEventListener('scroll', this.scrollEvent, true);
+  }
+
+  removeEvent() {
+    window.removeEventListener('scroll', this.scrollEvent, true);
+  }
+  scroll() {
+    if (typeof(window) !== 'undefined' && typeof(window.scrollTo) === 'function') {
+      this.scrollY = window.scrollY || window.pageYOffset;
+    }
+  }
 }

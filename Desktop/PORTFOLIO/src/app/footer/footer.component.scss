@@ -1,0 +1,53 @@
+@import '../../styles.scss';
+
+@media #{$pc} {
+  .footer-wrapper {
+    width: 100%;
+    padding: 2% 5%;
+    color: $textMain;
+    font-size: rem(19);
+    display: flex;
+    justify-content: space-between;
+    display: none;
+    .box {
+      margin: unset;
+      line-height: 1.4;
+      p {
+        span {
+          display: block;
+        }
+      }
+    }
+    .left-box {
+      p {
+        span {
+          font-weight: bold;
+        }
+      }
+    }
+    .right-box {
+      p {
+        span {
+          display: flex;
+          justify-content: flex-end;
+        }
+      }
+    }
+    &.showScroll {
+      display: block;
+      display: flex;
+      justify-content: space-between;
+      animation: show 1s linear;
+    }
+  }
+}
+
+@-webkit-keyframes show {
+  0% {
+    opacity: 0;
+  }
+  
+  100% {
+    opacity: 1;
+  }
+}

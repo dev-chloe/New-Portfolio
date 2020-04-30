@@ -3,6 +3,8 @@
 @media #{$mobile} {
   .contact-wapper {
     color: $textMain;
+    width: 100%;
+    height: 100%;
     h3 {
       text-align: center;
       font-size: rem(35);

@@ -7,6 +7,9 @@
     left: 0;
     right: 0;
     z-index: 1;
+    &.showScroll {
+      background-color: $main;
+    }
     .header-wrap {
       display: flex;
       margin: 0 auto;

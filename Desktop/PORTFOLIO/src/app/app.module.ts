@@ -13,6 +13,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { WhatIDoComponent } from './what-i-do/what-i-do.component';
 import { AppService } from './app.service';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AppService } from './app.service';
     MainComponent,
     AboutComponent,
     ContactComponent,
-    WhatIDoComponent 
+    WhatIDoComponent,
+    FooterComponent 
   ],
   imports: [
     BrowserModule,

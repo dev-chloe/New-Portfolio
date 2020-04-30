@@ -1,4 +1,5 @@
-<div class="logo shown-in-pc">
+<div class="logo shown-in-pc"
+     [ngClass]="{'showScroll': scrollY > 0}">
   <a routerlink="/main" (click)="go('/main')">
     <!-- <img src="../../assets/logo.png" alt="logo"> -->
     Chloe.K
@@ -6,13 +7,14 @@
 </div>
 <nav class="pc-nav shown-in-pc">
   <ul>
-    <li><a routerlink="/about" (click)="go('/about')">About</a></li>
+    <li [ngClass]="{'showScroll': scrollY > 0}"><a routerlink="/about" (click)="go('/about')">About</a></li>
     <li><a routerlink="/what-i-do" (click)="go('/what-i-do')">What I Do</a></li>
     <li><a routerlink="/contact" (click)="go('/contact')">Contact</a></li>
   </ul>
 </nav>
 
-<div class="header-wrapper shown-in-mobile">
+<div class="header-wrapper shown-in-mobile" 
+     [ngClass]="{'showScroll': scrollY > 0}">
   <div class="header-wrap">
       <div class="logo-wapper">
           <div class="logo">

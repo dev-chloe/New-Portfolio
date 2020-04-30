@@ -8,6 +8,11 @@
     position: absolute;
     top: 3%;
     left: 5%;
+    &.showScroll {
+      position: fixed;
+      top: 3%;
+      left: 5%;
+    }
     a {
       font-size: rem(30);
       font-weight: bold;
@@ -22,6 +27,11 @@
           position: absolute;
           top: 4%;
           right: 5%;
+          &.showScroll {
+            position: fixed;
+            top: 4%;
+            right: 5%;
+          }
         }
         &:nth-of-type(2) {
           position: absolute;

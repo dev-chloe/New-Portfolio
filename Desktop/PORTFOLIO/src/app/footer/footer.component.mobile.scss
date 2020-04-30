@@ -1,0 +1,48 @@
+@import '../../styles.scss';
+
+@media #{$mobile} {
+  .footer-wrapper {
+    width: 100%;
+    padding: 2% 5%;
+    color: $textMain;
+    font-size: rem(16);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    display: none;
+    .box {
+      margin: unset;
+      line-height: 1.4;
+      margin-bottom: rem(15);
+      p {
+        span {
+          display: block;
+        }
+      }
+    }
+    .left-box {
+      p {
+        span {
+          font-weight: bold;
+        }
+      }
+    }
+    &.showScroll {
+      display: block;
+      display: flex;
+      justify-content: space-between;
+      animation: show 1s linear;
+    }
+  }
+}
+
+@-webkit-keyframes show {
+  0% {
+    opacity: 0;
+  }
+  
+  100% {
+    opacity: 1;
+  }
+}
