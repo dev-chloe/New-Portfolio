@@ -7,7 +7,6 @@
   @return unquote($value)
 }
 
-
 $shadows-small:  multiple-box-shadow(700);
 $shadows-medium: multiple-box-shadow(200);
 $shadows-big:    multiple-box-shadow(100);
@@ -45,8 +44,7 @@ $shadows-big:    multiple-box-shadow(100);
     box-shadow: $shadows-medium;
   }
 }
-    
-    
+      
 #stars3{
   width: 3px;
   height: 3px;

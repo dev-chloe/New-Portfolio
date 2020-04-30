@@ -1,27 +1,29 @@
-# PORTFOLIO
+# PORTFOLIO 2020
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
+## [Deploy](https://dzone.com/articles/how-to-deploy-an-angular-application-to-github)
 
-## Development server
+```bash
+# Add module
+ng add angular-cli-ghpages
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# Remove old source in Host-repo
+cd ~/workspace/Portfolio2020;
+rm -rf *.js *.html *.ico *.txt *.css assets;
 
-## Code scaffolding
+# Deploy
+cd ~/workspace/New-Portfolio;
+ng build --prod --deploy-url https://dev-chloe.github.io/Portfolio2020;
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Copy new source to Host-repo
+cd ~/workspace/New-Portfolio/dist/PORTFOLIO;
+cp -R * ~/workspace/Portfolio2020;
 
-## Build
+# Push to Remote-Host-repo
+cd ~/workspace/Portfolio2020;
+git add .;
+git commit -m "deploy `date '+%Y%m%d'`";
+git push origin master;
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+# Back to Project Home
+cd ~/workspace/New-Portfolio;
+```
